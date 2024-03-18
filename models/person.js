@@ -6,7 +6,7 @@ const url = process.env.MONGODB_URI
 
 mongoose.connect(url)
 
-  .then(result => {
+  .then(() => {
     console.log('connected to MongoDB')
   })
   .catch((error) => {
@@ -16,13 +16,13 @@ mongoose.connect(url)
 const personSchema = new mongoose.Schema({
   name: {
     type: String,
-    minLength: [3, "min length: 3"],
-    required: [true, "is required"]
+    minLength: [3, 'min length: 3'],
+    required: [true, 'is required']
   },
   number: {
     type: String,
-    minLength: [8, "min length: 8"],
-    required: [true, "is required"] 
+    minLength: [8, 'min length: 8'],
+    required: [true, 'is required']
   }
 })
 
